@@ -9,7 +9,6 @@ def newFeasibleEdge(M,V):
     i = 0
 
 
-
     while True:
         while(i < len(V)):
             if(vT == V[i]):
@@ -19,10 +18,6 @@ def newFeasibleEdge(M,V):
             i+=1
         if(vT != vY):
             break
-
-
-
-
 
 
 
