@@ -5,13 +5,24 @@ import bresenham
 
 def newFeasibleEdge(M,V):
     vY = V[req.randrange(len(V))]
+    vT = req.randrange(1, M + 1)
+    i = 0
 
 
 
     while True:
-        vT = req.randrange( 1, M+1 )
+        while(i < len(V)):
+            if(vT == V[i]):
+                vT = req.randrange(1, M + 1)
+                i=-1
+                print("hololo")
+            i+=1
         if(vT != vY):
             break
+
+
+
+
 
 
 
