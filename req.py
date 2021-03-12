@@ -15,8 +15,13 @@ def optimization(V):
 
 
 
-
-
+def controlOverlap(arr,vX):
+    if(vX == 1):
+        return False
+    for x in range(len(arr)):
+        if(vX == arr[x]):
+            return False
+    return True
 
 def toTransport(maxX, arr):
     c = []
