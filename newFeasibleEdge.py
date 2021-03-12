@@ -7,7 +7,6 @@ def newFeasibleEdge(M,V):
     vY = V[req.randrange(len(V))]
 
 
-
     while True:
         vT = req.randrange( 1, M+1 )
         if(vT != vY):
