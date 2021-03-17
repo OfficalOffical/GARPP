@@ -1,6 +1,7 @@
 from random import randrange
 import math
 import bresenham
+import matplotlib.pyplot as plt
 
 
 def optimization(V):
@@ -73,6 +74,43 @@ def isFeasible(maxSize,start,end):  # O(N^2) look at this <<<<<<<<<<<
                 return False
 
     return True
+
+
+
+
+def drawGraph(E):
+    x = []
+    y = []
+    for z in range(len(E)):
+        tempX,tempY = E[z]
+        x.append(tempX)
+        y.append(tempY)
+
+    for f in range(len(x)):
+        print("X:",x[f],"Y:",y[f])
+
+
+
+    # function to show the plot
+    plt.show()
+
+
+def bubbleSort(E):
+    n = len(E)
+
+    # Traverse through all array elements
+    for i in range(n):
+
+        # Last i elements are already in place
+        for j in range(0, n - i - 1):
+
+            # traverse the array from 0 to n-i-1
+            # Swap if the element found is greater
+            # than the next element
+            if E[j][0] > E[j + 1][0]:
+                E[j][0], E[j + 1] = E[j + 1][0], E[j]
+
+    return E
 
 
 

@@ -16,15 +16,22 @@ def createGraph(M,S,D):
 
         for x in range(1):
             if (req.isFeasible(6,U[x],vX ) == True):
-                E.append([U[x],vX])
                 V.append(vX)
                 U.insert(0, vX)
+                for x in range(len(V)):
+                    if(req.isFeasible(6,V[x],vX)==True and vX != V[x]):
+                        E.append([V[x],vX])
                 vL = vX
+
+
+#    req.drawGraph(E)
 
 
     print("V:",V)
     print("U: :", U)
     print("E:",E)
+    print("sortin",req.bubbleSort(E))
+
 
 
 
