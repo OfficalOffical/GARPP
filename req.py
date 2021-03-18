@@ -86,34 +86,28 @@ def drawGraph(E):
         x.append(tempX)
         y.append(tempY)
 
-    for f in range(len(x)):
-        print("X:",x[f],"Y:",y[f])
+    plt.scatter(x, y, label="stars", color="green",
+                marker="*", s=30)
 
-
-
-    # function to show the plot
+    plt.xlabel('x - axis')
+    plt.ylabel('y - axis')
+    plt.title('My scatter plot!')
+    plt.legend()
     plt.show()
 
 
-def bubbleSort(E):
-    n = len(E)
+def sortingE(E): # you can go for merge or heap etc. o(n) rn
+    for i in range(len(E)):
 
-    # Traverse through all array elements
-    for i in range(n):
-
-        # Last i elements are already in place
-        for j in range(0, n - i - 1):
-
-            # traverse the array from 0 to n-i-1
-            # Swap if the element found is greater
-            # than the next element
-            if E[j][0] > E[j + 1][0]:
-                E[j][0], E[j + 1] = E[j + 1][0], E[j]
+        lowest_value_index = i
+        for j in range(i + 1, len(E)):
+            if E[j][0] < E[lowest_value_index][0]:
+                lowest_value_index = j
+        # Swap values of the lowest unsorted element with the first unsorted
+        # element
+        E[i], E[lowest_value_index] = E[lowest_value_index], E[i]
 
     return E
-
-
-
 
 
 
