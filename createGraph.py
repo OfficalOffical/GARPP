@@ -15,17 +15,20 @@ def createGraph(M,S,D):
 
 
 
-            if (req.isFeasible(6,U[0],vX ) == True):
-                V.append(vX)
-                U.insert(0, vX)
-                for x in range(len(V)):
-                    if(req.isFeasible(6,V[0],vX)==True and vX != V[x]):
+        if (req.isFeasible(6,U[0],vX ) == True):
+            V.append(vX)
+            U.insert(0, vX)
+            for x in range(len(V)):
+                if(req.isFeasible(6,V[x],vX)==True and vX != V[x]):
+                    E.append([V[x], vX])
+                    E.append([vX, V[x]])
+            vL = vX
 
-                        E.append([V[0], vX])
-                vL = vX
+    temp = len(V)
+    E.append([36,V[temp-1]])
+    temp = len(V)
+    E.append([V[temp-1],36])
 
-
-    print("E:" , E)
     print("V:",V)
     print("U: :", U)
 
