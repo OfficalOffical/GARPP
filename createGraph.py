@@ -14,14 +14,14 @@ def createGraph(M,S,D):
             vY, vX = newFeasibleEdge.newFeasibleEdge( 36, V )  # vY == S, vX == new Feasible point
 
 
-        for x in range(1):
-            if (req.isFeasible(6,U[x],vX ) == True):
+
+            if (req.isFeasible(6,U[0],vX ) == True):
                 V.append(vX)
                 U.insert(0, vX)
                 for x in range(len(V)):
-                    if(req.isFeasible(6,V[x],vX)==True and vX != V[x]):
+                    if(req.isFeasible(6,V[0],vX)==True and vX != V[x]):
 
-                        E.append([V[x], vX])
+                        E.append([V[0], vX])
                 vL = vX
 
 
