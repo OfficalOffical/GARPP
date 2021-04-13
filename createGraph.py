@@ -25,15 +25,15 @@ def createGraph(M,S,D):
                 vL = vX
 
 
-
-
-
+    print("E:" , E)
     print("V:",V)
     print("U: :", U)
-    print("E:",E)
-    print("sortin",req.sortingE(E))
-    req.drawGraph(E)
 
+    """
+    req.drawGraph(E)
+    """
+
+    return E
 
 
 

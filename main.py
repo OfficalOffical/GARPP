@@ -1,21 +1,18 @@
-
-
 import bresenham
 import req
 import newFeasibleEdge
 import createGraph
+import findRoad
 
-#Change maxSize to maxX, maxY
-
-
-t = req.isFeasible(36,3,20)
-
-print(t)
+M = 36
+S = 1
+D = 36
 
 
+findRoad.findPath(1)
 
-s = createGraph.createGraph(36,1,36)
-print(s)
+
+
 
 
 
