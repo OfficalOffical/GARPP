@@ -9,7 +9,7 @@ S = 1
 D = 36
 
 
-findRoad.findPath(1)
+findRoad.findPath(36,1,36,5)
 
 
 

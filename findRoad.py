@@ -3,13 +3,38 @@ import createGraph
 import req
 import random
 
-def findPath(n):
-    g = createGraph.createGraph(36,1,36)
+def findPath(M,S,D,N):
+    P = []
+    counter = 0
+    g = createGraph.createGraph(M,S,D)
     sortedG = req.sortingE(g)
-
-    vi = 1
-
     print(sortedG)
+    vi = S
+    for x in range(N+1):
+        vi=1
+        tempP = [S]
+        counter = 0
+        while(vi != g[(len(g)-1)][1] and counter < 100):
+            tempMin, tempMax = findRange(g, vi)
+            tempLast = random.randint(tempMin, tempMax)
+            while ((req.controlOverlap(tempP, g[tempLast][1]) != True) and counter < 100):
+                tempMin, tempMax = findRange(g, vi)
+                tempLast = random.randint(tempMin, tempMax)
+                counter += 1
+
+            tempP.append(g[tempLast][1])
+            vi =  g[tempLast][1]
+
+            counter += 1
+
+        if (tempP[len(tempP) - 1] == g[(len(g) - 1)][1]):
+            P.append(tempP)
+
+
+
+
+    for x in range(len(P)):
+        print("P ",x+1,": ",P[x-1])
 
 
 
