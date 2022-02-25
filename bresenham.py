@@ -1,5 +1,7 @@
 import numpy as np
 
+#This is an Supercover Bresenham algorithm.
+
 def bresenham(x0,y0,x1,y1):
     c = []
     dx = abs(x1-x0)
