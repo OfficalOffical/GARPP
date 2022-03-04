@@ -1,3 +1,4 @@
+import random
 from random import randrange
 import math
 import bresenham
@@ -59,8 +60,8 @@ def maxDist(maxX, x, y):
 
     return math.sqrt(tempX+tempY)
 
-def isFeasible(maxSize,start,end):  # O(N^2) look at this <<<<<<<<<<<
-    block = [2,8,12,14,23,27,29,33,35]
+def isFeasible(maxSize,start,end, block):  # O(N^2) look at this <<<<<<<<<<<
+
 
     x0,y0 = deTransport(6,start)
     x1,y1 = deTransport(6,end)
@@ -74,6 +75,31 @@ def isFeasible(maxSize,start,end):  # O(N^2) look at this <<<<<<<<<<<
                 return False
 
     return True
+
+def isAgainstRule(block,tempRand, M):
+    if(tempRand == M):
+        return True
+    return False
+
+def simulateBlock(M):
+    block = []
+
+    for x in range(int(M*20/100)):
+        boolChecker = False
+        tempRand = random.randint(1,M)
+        for y in block:
+            if(tempRand == y):
+                boolChecker = True
+                continue
+
+        if(boolChecker == False and isAgainstRule(block,tempRand,M) == False):
+            block.append(tempRand)
+
+    block.sort()
+    print(block)
+
+    return block
+
 
 
 

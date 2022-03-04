@@ -7,19 +7,22 @@ def createGraph(M,S,D):
     U = []
     vL = S
     U.insert(0, vL)
+
+    simBlock = req.simulateBlock(M)
+
     #26,22
-    while(req.isFeasible(6,vL,D) != True):
-        vY, vX = newFeasibleEdge.newFeasibleEdge( 36, V )  # vY == S, vX == new Feasible point
+    while(req.isFeasible(6,vL,D,simBlock) != True):
+        vY, vX = newFeasibleEdge.newFeasibleEdge( 36, V,simBlock )  # vY == S, vX == new Feasible point
         while(req.controlOverlap(V,vX) != True):
-            vY, vX = newFeasibleEdge.newFeasibleEdge( 36, V )  # vY == S, vX == new Feasible point
+            vY, vX = newFeasibleEdge.newFeasibleEdge( 36, V, simBlock )  # vY == S, vX == new Feasible point
 
 
 
-        if (req.isFeasible(6,U[0],vX ) == True):
+        if (req.isFeasible(6,U[0],vX,simBlock ) == True):
             V.append(vX)
             U.insert(0, vX)
             for x in range(len(V)):
-                if(req.isFeasible(6,V[x],vX)==True and vX != V[x]):
+                if(req.isFeasible(6,V[x],vX,simBlock)==True and vX != V[x]):
                     E.append([V[x], vX])
                     E.append([vX, V[x]])
             vL = vX
