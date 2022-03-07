@@ -3,8 +3,9 @@ import bresenham
 
 
 
-def newFeasibleEdge(M,V):
+def newFeasibleEdge(M,V,simBlock):
     vY = V[req.randrange(len(V))]
+
 
 
     while True:
@@ -25,7 +26,7 @@ def newFeasibleEdge(M,V):
 
 
     for x in range( len( TC ) ):
-        if (req.isFeasible( 6, vY, TC[x] )):
+        if (req.isFeasible( 6, vY, TC[x], simBlock)):
             if (tempDist < req.maxDist( 6, vY, TC[x] )):
                 tempDist = req.maxDist( 6, vY, TC[x] )
                 vX = TC[x]
