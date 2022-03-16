@@ -1,4 +1,4 @@
-
+import manhattanDistance
 import createGraph
 import req
 import random
@@ -10,6 +10,7 @@ def findPath(M,S,D,N):
     sortedG = req.sortingE(g)
     print(sortedG)
     vi = S
+
     for x in range(N+1):
         vi=1
         tempP = [S]
@@ -22,6 +23,7 @@ def findPath(M,S,D,N):
                 tempLast = random.randint(tempMin, tempMax)
                 counter += 1
 
+
             tempP.append(g[tempLast][1])
             vi =  g[tempLast][1]
 
@@ -31,12 +33,9 @@ def findPath(M,S,D,N):
             P.append(tempP)
 
 
-
-
     for x in range(len(P)):
-        print("P ",x+1,": ",P[x-1])
-
-
+       print("P ",x+1,": ",P[x-1])
+       manhattanDistance.ManhattanDistance(P[x-1])
 
 
 
